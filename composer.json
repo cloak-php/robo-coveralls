@@ -5,6 +5,7 @@
     },
     "require-dev": {
         "peridot-php/peridot": "~1.8",
+        "cloak/peridot-cloak": "~1.0",
         "expectation/peridot-expectation": "~1.2",
         "codegyre/robo": "~0.4"
     },
@@ -20,5 +21,8 @@
             "email": "holy.shared.design@gmail.com"
         }
     ],
+    "scripts": {
+        "test": "vendor/bin/peridot spec"
+    },
     "minimum-stability": "stable"
 }
