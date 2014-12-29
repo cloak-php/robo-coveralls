@@ -1,5 +1,5 @@
 {
-    "name": "root/robo-coveralls",
+    "name": "cloak/robo-coveralls",
     "require": {
         "cloak/coverallskit": "~1.4"
     },
@@ -7,6 +7,11 @@
         "peridot-php/peridot": "~1.8",
         "expectation/peridot-expectation": "~1.2",
         "codegyre/robo": "~0.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "cloak\\robo\\coveralls\\": "src"
+        }
     },
     "license": "MIT",
     "authors": [
