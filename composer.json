@@ -1,0 +1,19 @@
+{
+    "name": "root/robo-coveralls",
+    "require": {
+        "cloak/coverallskit": "~1.4"
+    },
+    "require-dev": {
+        "peridot-php/peridot": "~1.8",
+        "expectation/peridot-expectation": "~1.2",
+        "codegyre/robo": "~0.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "holyshared",
+            "email": "holy.shared.design@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
