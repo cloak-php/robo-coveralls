@@ -9,7 +9,7 @@ use Robo\Result;
 use Robo\Output;
 
 
-class Upload implements TaskInterface
+class Save implements TaskInterface
 {
 
     use Output;
@@ -25,9 +25,9 @@ class Upload implements TaskInterface
     public function run()
     {
         $report = $this->builder->build();
-        $report->upload();
+        $report->save();
 
-        $message = sprintf('Sent a file %s to coveralls.', $report->getName());
+        $message = sprintf('The %s have been saved.', $report->getName());
         $this->yell($message);
 
         return Result::success($this);
