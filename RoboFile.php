@@ -22,7 +22,13 @@ class RoboFile extends Tasks
 
     public function coverallsUpload()
     {
-        return $this->taskCoverallsUpload('coveralls.toml')->run();
+        $result = $this->taskCoverallsKit()
+            ->configure('coveralls.toml')
+            ->save()
+            ->upload()
+            ->run();
+
+        return $result;
     }
 
 }

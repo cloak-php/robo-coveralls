@@ -2,8 +2,10 @@
 
 namespace cloak\robo\coveralls;
 
+use cloak\robo\coveralls\task\CoverallsKitTask;
 use cloak\robo\coveralls\task\Save;
 use cloak\robo\coveralls\task\Upload;
+
 
 /**
  * Trait CoverallsTasks
@@ -11,6 +13,11 @@ use cloak\robo\coveralls\task\Upload;
  */
 trait CoverallsTasks
 {
+
+    protected function taskCoverallsKit()
+    {
+        return new CoverallsKitTask();
+    }
 
     /**
      * @param string $configPath
