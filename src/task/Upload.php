@@ -9,19 +9,32 @@ use Robo\Result;
 use Robo\Output;
 
 
+/**
+ * Class Upload
+ * @package cloak\robo\coveralls\task
+ */
 class Upload implements TaskInterface
 {
 
     use Output;
 
+    /**
+     * @var \coverallskit\ReportBuilderInterface
+     */
     private $builder;
 
+    /**
+     * @param string $configPath
+     */
     public function __construct($configPath)
     {
         $configuration = Configuration::loadFromFile($configPath);
         $this->builder = ReportBuilder::fromConfiguration($configuration);
     }
 
+    /**
+     * @return Result
+     */
     public function run()
     {
         $report = $this->builder->build();
