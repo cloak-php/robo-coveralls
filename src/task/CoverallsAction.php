@@ -46,6 +46,7 @@ class CoverallsKitAction
 
     public function upload()
     {
+        $this->save();
         $this->report->upload();
 
         $message = sprintf('Sent a file %s to coveralls.', $report->getName());

@@ -24,8 +24,6 @@ class RoboFile extends Tasks
     {
         $result = $this->taskCoverallsKit()
             ->configure('coveralls.toml')
-            ->save()
-            ->upload()
             ->run();
 
         return $result;

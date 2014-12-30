@@ -15,13 +15,13 @@ class CoverallsKitTask implements TaskInterface
 {
 
     private $action;
-    private $save;
-    private $upload;
+    private $saveOnly;
 
 
     public function __construct()
     {
         $this->action = new CoverallsKitAction();
+        $this->saveOnly = false;
     }
 
     public function configure($configPath)
@@ -30,15 +30,9 @@ class CoverallsKitTask implements TaskInterface
         return $this;
     }
 
-    public function save()
+    public function saveOnly()
     {
-        $this->save = true;
-        return $this;
-    }
-
-    public function upload()
-    {
-        $this->upload = true;
+        $this->saveOnly = true;
         return $this;
     }
 
@@ -46,11 +40,9 @@ class CoverallsKitTask implements TaskInterface
     {
         $this->action->build();
 
-        if ($this->save) {
+        if ($this->saveOnly) {
             $this->action->save();
-        }
-
-        if ($this->upload) {
+        } else {
             $this->action->upload();
         }
 
