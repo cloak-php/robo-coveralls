@@ -1,16 +1,15 @@
 <?php
 
-namespace cloak\robo\coveralls\task;
+namespace coverallskit\robo\task;
 
-use cloak\robo\coveralls\ActionInterface;
+use coverallskit\robo\ActionInterface;
 use coverallskit\Configuration;
 use Robo\Task\Shared\TaskInterface;
 use Robo\Result;
 
-
 /**
  * Class CoverallsKitTask
- * @package cloak\robo\coveralls\task
+ * @package coverallskit\robo\task
  */
 class CoverallsKitTask implements TaskInterface
 {

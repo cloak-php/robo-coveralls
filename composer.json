@@ -12,12 +12,12 @@
     },
     "autoload": {
         "psr-4": {
-            "cloak\\robo\\coveralls\\": "src"
+            "coverallskit\\robo\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "cloak\\robo\\coveralls\\spec\\": "spec/fixtures"
+            "coverallskit\\robo\\spec\\": "spec/fixtures"
         }
     },
     "license": "MIT",

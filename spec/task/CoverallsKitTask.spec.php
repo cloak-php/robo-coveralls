@@ -1,7 +1,9 @@
 <?php
 
-use cloak\robo\coveralls\task\CoverallsKitTask;
-use cloak\robo\coveralls\Action;
+namespace coverallskit\robo\spec\task;
+
+use coverallskit\robo\task\CoverallsKitTask;
+use coverallskit\robo\Action;
 use coverallskit\ReportBuilder;
 
 

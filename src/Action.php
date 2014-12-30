@@ -1,15 +1,14 @@
 <?php
 
-namespace cloak\robo\coveralls;
+namespace coverallskit\robo;
 
 use coverallskit\Configuration;
 use coverallskit\ReportBuilderInterface;
 use Robo\Output;
 
-
 /**
  * Class Action
- * @package cloak\robo\coveralls\task
+ * @package coverallskit\robo
  */
 class Action implements ActionInterface
 {

@@ -1,8 +1,11 @@
 <?php
 
-use cloak\robo\coveralls\Action;
+namespace coverallskit\robo\spec;
+
+use coverallskit\robo\Action;
 use Prophecy\Prophet;
 use Prophecy\Argument;
+
 
 describe('Action', function() {
     beforeEach(function() {

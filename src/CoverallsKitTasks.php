@@ -1,16 +1,16 @@
 <?php
 
-namespace cloak\robo\coveralls;
+namespace coverallskit\robo;
 
-use cloak\robo\coveralls\task\CoverallsKitTask;
 use coverallskit\ReportBuilder;
+use coverallskit\robo\task\CoverallsKitTask;
 
 
 /**
- * Trait CoverallsTasks
- * @package cloak\robo\coveralls
+ * Trait CoverallsKitTasks
+ * @package coverallskit\robo
  */
-trait CoverallsTasks
+trait CoverallsKitTasks
 {
 
     protected function taskCoverallsKit()

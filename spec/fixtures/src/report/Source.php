@@ -1,6 +1,7 @@
 <?php
 
-namespace cloak\robo\coveralls\spec\task;
+namespace coverallskit\robo\spec\task;
+
 
 class Source
 {

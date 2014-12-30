@@ -1,14 +1,15 @@
 <?php
 
-use cloak\robo\coveralls\spec\CoverallsTaskFixture;
+namespace coverallskit\robo\spec;
+
 
 describe('CoverallsTasks', function() {
     beforeEach(function() {
         $this->robo = new CoverallsTaskFixture();
     });
     describe('#taskCoverallsKit', function() {
-        it('return cloak\robo\coveralls\task\CoverallsKitTask instance', function() {
-            expect($this->robo->coverallsKit())->toBeAnInstanceOf('cloak\robo\coveralls\task\CoverallsKitTask');
+        it('return coverallskit\robo\task\CoverallsKitTask instance', function() {
+            expect($this->robo->coverallsKit())->toBeAnInstanceOf('coverallskit\robo\task\CoverallsKitTask');
         });
     });
 });

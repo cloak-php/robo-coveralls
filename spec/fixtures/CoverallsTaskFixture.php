@@ -1,18 +1,18 @@
 <?php
 
-namespace cloak\robo\coveralls\spec;
+namespace coverallskit\robo\spec;
 
-use cloak\robo\coveralls\CoverallsTasks;
+use coverallskit\robo\CoverallsKitTasks;
 
 
 /**
  * Class CoverallsTaskFixture
- * @package cloak\robo\coveralls\spec
+ * @package coverallskit\robo\spec
  */
 class CoverallsTaskFixture
 {
 
-    use CoverallsTasks;
+    use CoverallsKitTasks;
 
     public function coverallsKit()
     {

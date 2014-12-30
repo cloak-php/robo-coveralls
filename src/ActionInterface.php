@@ -1,8 +1,11 @@
 <?php
 
-namespace cloak\robo\coveralls;
+namespace coverallskit\robo;
 
-
+/**
+ * Interface ActionInterface
+ * @package coverallskit\robo
+ */
 interface ActionInterface
 {
 
