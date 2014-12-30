@@ -4,7 +4,6 @@ use cloak\robo\coveralls\Action;
 use Prophecy\Prophet;
 use Prophecy\Argument;
 
-
 describe('Action', function() {
     beforeEach(function() {
         $this->configPath = __DIR__ . '/fixtures/coveralls.toml';
