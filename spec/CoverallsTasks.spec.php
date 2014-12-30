@@ -13,14 +13,9 @@ describe('CoverallsTasks', function() {
 
         $this->robo = new CoverallsTaskFixture();
     });
-    describe('#taskCoverallsSave', function() {
-        it('return cloak\robo\coveralls\task\Save instance', function() {
-            expect($this->robo->save($this->configPath))->toBeAnInstanceOf('cloak\robo\coveralls\task\Save');
-        });
-    });
-    describe('#taskCoverallsUpload', function() {
-        it('return cloak\robo\coveralls\task\Upload instance', function() {
-            expect($this->robo->upload($this->configPath))->toBeAnInstanceOf('cloak\robo\coveralls\task\Upload');
+    describe('#taskCoverallsKit', function() {
+        it('return cloak\robo\coveralls\task\CoverallsKitTask instance', function() {
+            expect($this->robo->coverallsKit())->toBeAnInstanceOf('cloak\robo\coveralls\task\CoverallsKitTask');
         });
     });
 });

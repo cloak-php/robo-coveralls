@@ -11,23 +11,12 @@ use cloak\robo\coveralls\CoverallsTasks;
  */
 class CoverallsTaskFixture
 {
+
     use CoverallsTasks;
 
-    private $configPath;
-
-    public function __construct()
+    public function coverallsKit()
     {
-        $this->configPath = __DIR__ . '/coveralls.toml';
-    }
-
-    public function save()
-    {
-        return $this->taskCoverallsSave($this->configPath);
-    }
-
-    public function upload()
-    {
-        return $this->taskCoverallsUpload($this->configPath);
+        return $this->taskCoverallsKit();
     }
 
 }
