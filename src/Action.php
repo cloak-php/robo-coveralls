@@ -62,7 +62,7 @@ class Action implements ActionInterface
         $this->save();
         $this->report->upload();
 
-        $message = sprintf('Sent a file %s to coveralls.', $report->getName());
+        $message = sprintf('Sent a file %s to coveralls.', $this->report->getName());
         $this->yell($message);
     }
 
