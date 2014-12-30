@@ -1,30 +1,43 @@
 <?php
 
-namespace cloak\robo\coveralls\task;
+namespace cloak\robo\coveralls;
 
 use coverallskit\Configuration;
-use coverallskit\ReportBuilder;
+use coverallskit\ReportBuilderInterface;
 use Robo\Output;
 
 
 /**
- * Class CoverallsKitAction
+ * Class Action
  * @package cloak\robo\coveralls\task
  */
-class CoverallsKitAction
+class Action implements ActionInterface
 {
 
     use Output;
 
+    /**
+     * @var ReportBuilderInterface
+     */
     private $builder;
+
+    /**
+     * @var
+     */
     private $report;
 
 
-    public function __construct()
+    /**
+     * @param ReportBuilderInterface $builder
+     */
+    public function __construct(ReportBuilderInterface $builder)
     {
-        $this->builder = new ReportBuilder();
+        $this->builder = $builder;
     }
 
+    /**
+     * @param string $configPath
+     */
     public function configure($configPath)
     {
         $configuration = Configuration::loadFromFile($configPath);

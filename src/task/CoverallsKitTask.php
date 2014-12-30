@@ -2,6 +2,7 @@
 
 namespace cloak\robo\coveralls\task;
 
+use cloak\robo\coveralls\ActionInterface;
 use coverallskit\Configuration;
 use Robo\Task\Shared\TaskInterface;
 use Robo\Result;
@@ -14,28 +15,48 @@ use Robo\Result;
 class CoverallsKitTask implements TaskInterface
 {
 
+    /**
+     * @var ActionInterface
+     */
     private $action;
+
+    /**
+     * @var bool
+     */
     private $saveOnly;
 
 
-    public function __construct()
+    /**
+     * @param ActionInterface $action
+     */
+    public function __construct(ActionInterface $action)
     {
-        $this->action = new CoverallsKitAction();
+        $this->action = $action;
         $this->saveOnly = false;
     }
 
+    /**
+     * @param string $configPath
+     * @return $this
+     */
     public function configure($configPath)
     {
         $this->action->configure($configPath);
         return $this;
     }
 
+    /**
+     * @return $this
+     */
     public function saveOnly()
     {
         $this->saveOnly = true;
         return $this;
     }
 
+    /**
+     * @return Result
+     */
     public function run()
     {
         $this->action->build();
