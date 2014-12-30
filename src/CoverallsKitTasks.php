@@ -16,7 +16,7 @@ trait CoverallsKitTasks
     protected function taskCoverallsKit()
     {
         $builder = new ReportBuilder();
-        $action = new Action($builder);
+        $action = new ReportAction($builder);
 
         return new CoverallsKitTask($action);
     }

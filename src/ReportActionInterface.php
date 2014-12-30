@@ -3,10 +3,10 @@
 namespace coverallskit\robo;
 
 /**
- * Interface ActionInterface
+ * Interface ReportActionInterface
  * @package coverallskit\robo
  */
-interface ActionInterface
+interface ReportActionInterface
 {
 
     public function configure($configPath);

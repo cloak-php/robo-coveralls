@@ -2,12 +2,12 @@
 
 namespace coverallskit\robo\spec;
 
-use coverallskit\robo\Action;
+use coverallskit\robo\ReportAction;
 use Prophecy\Prophet;
 use Prophecy\Argument;
 
 
-describe('Action', function() {
+describe('ReportAction', function() {
     beforeEach(function() {
         $this->configPath = __DIR__ . '/fixtures/coveralls.toml';
         $this->coverageReportPath = __DIR__ . '/../tmp/build_report.lcov';
@@ -24,7 +24,7 @@ describe('Action', function() {
         $this->prophat = new Prophet();
 
         $this->builder = $this->prophat->prophesize('coverallskit\ReportBuilderInterface');
-        $this->action = new Action($this->builder->reveal());
+        $this->action = new ReportAction($this->builder->reveal());
 
         $this->service = Argument::type('coverallskit\entity\ServiceInterface');
         $this->repository = Argument::type('coverallskit\entity\RepositoryInterface');

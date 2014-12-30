@@ -7,10 +7,10 @@ use coverallskit\ReportBuilderInterface;
 use Robo\Output;
 
 /**
- * Class Action
+ * Class ReportAction
  * @package coverallskit\robo
  */
-class Action implements ActionInterface
+class ReportAction implements ReportActionInterface
 {
 
     use Output;

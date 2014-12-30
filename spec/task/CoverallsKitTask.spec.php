@@ -3,7 +3,7 @@
 namespace coverallskit\robo\spec\task;
 
 use coverallskit\robo\task\CoverallsKitTask;
-use coverallskit\robo\Action;
+use coverallskit\robo\ReportAction;
 use coverallskit\ReportBuilder;
 
 
@@ -24,7 +24,7 @@ describe('CoverallsKitTask', function() {
     describe('#run', function() {
         context('when save only', function() {
             beforeEach(function() {
-                $this->task = new CoverallsKitTask(new Action(new ReportBuilder()));
+                $this->task = new CoverallsKitTask(new ReportAction(new ReportBuilder()));
                 $this->task->configure($this->configPath)
                     ->saveOnly()
                     ->run();
