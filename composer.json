@@ -14,6 +14,11 @@
             "cloak\\robo\\coveralls\\": "src"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "cloak\\robo\\coveralls\\spec\\": "spec/fixtures"
+        }
+    },
     "license": "MIT",
     "authors": [
         {
