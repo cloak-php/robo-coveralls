@@ -7,11 +7,16 @@ use Prophecy\Argument;
 describe('Action', function() {
     beforeEach(function() {
         $this->configPath = __DIR__ . '/fixtures/coveralls.toml';
-        $this->reportPath = __DIR__ . '/../tmp/build_coveralls.json';
+        $this->coverageReportPath = __DIR__ . '/../tmp/build_report.lcov';
+        $this->coverallsReportPath = __DIR__ . '/../tmp/build_coveralls.json';
+        $this->templatePath = __DIR__ . '/fixtures/report.lcov';
 
-        $template = file_get_contents(__DIR__ . '/fixtures/report.lcov');
+        unlink($this->coverageReportPath);
+        unlink($this->coverallsReportPath);
+
+        $template = file_get_contents($this->templatePath);
         $reportContent = str_replace('{rootDirectory}', realpath(__DIR__ . '/../'), $template);
-        file_put_contents(__DIR__ . '/../tmp/build_report.lcov', $reportContent);
+        file_put_contents($this->coverageReportPath, $reportContent);
 
         $this->prophat = new Prophet();
 
