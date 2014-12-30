@@ -27,7 +27,8 @@
         }
     ],
     "scripts": {
-        "test": "vendor/bin/peridot spec"
+        "test": "vendor/bin/robo spec:all",
+        "coveralls": "vendor/bin/robo coveralls:upload"
     },
     "minimum-stability": "stable"
 }

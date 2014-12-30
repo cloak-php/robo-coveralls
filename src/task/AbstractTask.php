@@ -4,6 +4,7 @@ namespace cloak\robo\coveralls\task;
 
 use coverallskit\Configuration;
 use coverallskit\ReportBuilder;
+use coverallskit\entity\Report;
 use Robo\Task\Shared\TaskInterface;
 use Robo\Output;
 
@@ -22,6 +23,11 @@ abstract class AbstractTask implements TaskInterface
      */
     protected $builder;
 
+    /**
+     * @var bool
+     */
+    private $verbose;
+
 
     /**
      * @param string $configPath
@@ -30,6 +36,37 @@ abstract class AbstractTask implements TaskInterface
     {
         $configuration = Configuration::loadFromFile($configPath);
         $this->builder = ReportBuilder::fromConfiguration($configuration);
+        $this->verbose = false;
+    }
+
+    public function verbose()
+    {
+        $this->verbose = true;
+        return false;
+    }
+
+    protected function isVerbose()
+    {
+        return $this->verbose;
+    }
+
+    protected function dump(Report $report)
+    {
+        if ($this->isVerbose() === false) {
+            return;
+        }
+        $this->say($report->getName());
+        $this->say('repo_token: ', $report->getToken());
+
+        $values = $report->getService()->toArray();
+        foreach ($values as $key => $value) {
+            $this->say($key . ': ', $value);
+        }
+
+        $values = $report->getRepository()->getCommit()->toArray();
+        foreach ($values as $key => $value) {
+            $this->say($key . ': ', $value);
+        }
     }
 
 }

@@ -8,5 +8,7 @@ before_install:
   - composer install
 script:
   - composer test
+after_script:
+  - composer coveralls
 notifications:
   email: false
