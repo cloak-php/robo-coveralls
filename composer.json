@@ -1,5 +1,7 @@
 {
     "name": "cloak/robo-coveralls-kit",
+    "description": "Robo task for coveralls-kit",
+    "keywords": ["robo", "task", "coveralls", "coveralls-kit"],
     "require": {
         "php": ">=5.4.0",
         "codegyre/robo": "~0.4",
