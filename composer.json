@@ -1,6 +1,7 @@
 {
     "name": "cloak/robo-coveralls-kit",
     "require": {
+        "php": ">=5.4.0",
         "codegyre/robo": "~0.4",
         "cloak/coverallskit": "~1.4"
     },
