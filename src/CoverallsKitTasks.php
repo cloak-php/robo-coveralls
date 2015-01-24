@@ -3,7 +3,6 @@
 namespace coverallskit\robo;
 
 use coverallskit\ReportBuilder;
-use coverallskit\robo\task\CoverallsKitTask;
 
 
 /**

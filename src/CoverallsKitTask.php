@@ -1,9 +1,9 @@
 <?php
 
-namespace coverallskit\robo\task;
+namespace coverallskit\robo;
 
 use coverallskit\Configuration;
-use coverallskit\robo\ReportActionInterface;
+//use coverallskit\robo\ReportActionInterface;
 use Robo\Contract\TaskInterface;
 use Robo\Task\BaseTask;
 use Robo\Result;
