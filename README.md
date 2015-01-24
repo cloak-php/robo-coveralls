@@ -20,12 +20,12 @@ For more information about the configuration file, please refer to the [coverall
 ```php
 class RoboFile extends Tasks
 {
-	use \coverallskit\robo\CoverallsKitTasks;
+	use \coverallskit\robo\loadTasks;
 
 	public function coverallsUpload()
 	{
 		$result = $this->taskCoverallsKit()
-			->configure('coveralls.toml')
+			->configureBy('coveralls.toml')
 			->run();
 
 		return $result;
@@ -43,7 +43,7 @@ Just generate a report file, but does not upload.
 public function coverallsTest()
 {
 	$result = $this->taskCoverallsKit()
-		->configure('coveralls.toml')
+		->configureBy('coveralls.toml')
 		->saveOnly()
 		->run();
 
