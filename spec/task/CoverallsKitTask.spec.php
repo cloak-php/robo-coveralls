@@ -25,7 +25,7 @@ describe('CoverallsKitTask', function() {
         context('when save only', function() {
             beforeEach(function() {
                 $this->task = new CoverallsKitTask(new ReportAction(new ReportBuilder()));
-                $this->task->configure($this->configPath)
+                $this->task->configureBy($this->configPath)
                     ->saveOnly()
                     ->run();
             });

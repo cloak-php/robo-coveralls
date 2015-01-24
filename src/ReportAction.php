@@ -4,7 +4,8 @@ namespace coverallskit\robo;
 
 use coverallskit\Configuration;
 use coverallskit\ReportBuilderInterface;
-use Robo\Output;
+use Robo\Common\IO;
+
 
 /**
  * Class ReportAction
@@ -13,7 +14,7 @@ use Robo\Output;
 class ReportAction implements ReportActionInterface
 {
 
-    use Output;
+    use IO;
 
     /**
      * @var ReportBuilderInterface
@@ -21,7 +22,7 @@ class ReportAction implements ReportActionInterface
     private $builder;
 
     /**
-     * @var
+     * @var \coverallskit\entity\ReportInterface
      */
     private $report;
 

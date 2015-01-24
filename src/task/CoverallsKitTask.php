@@ -2,16 +2,18 @@
 
 namespace coverallskit\robo\task;
 
-use coverallskit\robo\ReportActionInterface;
 use coverallskit\Configuration;
-use Robo\Task\Shared\TaskInterface;
+use coverallskit\robo\ReportActionInterface;
+use Robo\Contract\TaskInterface;
+use Robo\Task\BaseTask;
 use Robo\Result;
+
 
 /**
  * Class CoverallsKitTask
  * @package coverallskit\robo\task
  */
-class CoverallsKitTask implements TaskInterface
+class CoverallsKitTask extends BaseTask implements TaskInterface
 {
 
     /**
@@ -38,7 +40,7 @@ class CoverallsKitTask implements TaskInterface
      * @param string $configPath
      * @return $this
      */
-    public function configure($configPath)
+    public function configureBy($configPath)
     {
         $this->action->configure($configPath);
         return $this;
