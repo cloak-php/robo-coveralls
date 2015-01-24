@@ -2,7 +2,7 @@
 
 namespace coverallskit\robo\spec;
 
-use coverallskit\robo\CoverallsKitTasks;
+use coverallskit\robo\loadTasks;
 
 
 /**
@@ -12,7 +12,7 @@ use coverallskit\robo\CoverallsKitTasks;
 class CoverallsTaskFixture
 {
 
-    use CoverallsKitTasks;
+    use loadTasks;
 
     public function coverallsKit()
     {

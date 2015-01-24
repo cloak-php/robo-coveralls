@@ -1,7 +1,7 @@
 <?php
 
 use Robo\Tasks;
-use coverallskit\robo\CoverallsKitTasks;
+use coverallskit\robo\loadTasks;
 
 
 /**
@@ -10,7 +10,7 @@ use coverallskit\robo\CoverallsKitTasks;
 class RoboFile extends Tasks
 {
 
-    use CoverallsKitTasks;
+    use loadTasks;
 
 
     public function specAll()
@@ -23,7 +23,7 @@ class RoboFile extends Tasks
     public function coverallsUpload()
     {
         $result = $this->taskCoverallsKit()
-            ->configure('coveralls.toml')
+            ->configureBy('coveralls.toml')
             ->run();
 
         return $result;

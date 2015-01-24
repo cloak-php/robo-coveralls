@@ -3,14 +3,13 @@
 namespace coverallskit\robo;
 
 use coverallskit\ReportBuilder;
-use coverallskit\robo\task\CoverallsKitTask;
 
 
 /**
- * Trait CoverallsKitTasks
+ * Trait loadTasks
  * @package coverallskit\robo
  */
-trait CoverallsKitTasks
+trait loadTasks
 {
 
     protected function taskCoverallsKit()
