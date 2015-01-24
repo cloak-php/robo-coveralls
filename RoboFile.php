@@ -1,7 +1,7 @@
 <?php
 
 use Robo\Tasks;
-use coverallskit\robo\CoverallsKitTasks;
+use coverallskit\robo\loadTasks;
 
 
 /**
@@ -10,7 +10,7 @@ use coverallskit\robo\CoverallsKitTasks;
 class RoboFile extends Tasks
 {
 
-    use CoverallsKitTasks;
+    use loadTasks;
 
 
     public function specAll()

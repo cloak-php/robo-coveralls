@@ -6,10 +6,10 @@ use coverallskit\ReportBuilder;
 
 
 /**
- * Trait CoverallsKitTasks
+ * Trait loadTasks
  * @package coverallskit\robo
  */
-trait CoverallsKitTasks
+trait loadTasks
 {
 
     protected function taskCoverallsKit()

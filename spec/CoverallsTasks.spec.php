@@ -3,7 +3,7 @@
 namespace coverallskit\robo\spec;
 
 
-describe('CoverallsTasks', function() {
+describe('loadTasks', function() {
     beforeEach(function() {
         $this->robo = new CoverallsTaskFixture();
     });
