@@ -30,7 +30,7 @@ describe('CoverallsKitTask', function() {
                     ->run();
             });
             it('save report file', function() {
-                expect(file_exists($this->coverallsReportPath))->toBeTruthy();
+                expect(file_exists($this->coverallsReportPath))->toBeTrue();
             });
         });
     });
