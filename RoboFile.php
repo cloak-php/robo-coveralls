@@ -1,7 +1,8 @@
 <?php
 
 use Robo\Tasks;
-use coverallskit\robo\loadTasks;
+use coverallskit\robo\loadTasks as CoverallsTasks;
+use peridot\robo\loadTasks as PeridotTasks;
 
 
 /**
@@ -10,14 +11,16 @@ use coverallskit\robo\loadTasks;
 class RoboFile extends Tasks
 {
 
-    use loadTasks;
+    use CoverallsTasks;
+    use PeridotTasks;
 
 
     public function specAll()
     {
-        $peridot = 'vendor/bin/peridot';
-        $peridotSpecDirectory = 'spec';
-        return $this->taskExec($peridot . ' ' . $peridotSpecDirectory)->run();
+        return $this->taskPeridot()
+            ->directoryPath('spec')
+            ->reporter('dot')
+            ->run();
     }
 
     public function coverallsUpload()
