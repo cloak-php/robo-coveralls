@@ -8,7 +8,7 @@
         "cloak/coverallskit": "~1.4"
     },
     "require-dev": {
-        "peridot-php/peridot": "~1.14",
+        "peridot-php/peridot": "~1.15",
         "cloak/peridot-cloak": "~1.1",
         "expectation/peridot-expectation": "~1.2",
         "phpspec/prophecy": "~1.3",
