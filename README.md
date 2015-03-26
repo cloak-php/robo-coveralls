@@ -8,6 +8,7 @@ Installation of [Robo PHP Task Runner](http://robo.li/) will be mandatory to use
 [![Latest Stable Version](https://poser.pugx.org/cloak/robo-coveralls-kit/v/stable.svg)](https://packagist.org/packages/cloak/robo-coveralls-kit)
   [![Latest Unstable Version](https://poser.pugx.org/cloak/robo-coveralls-kit/v/unstable.svg)](https://packagist.org/packages/cloak/robo-coveralls-kit)
 [![Build Status](https://travis-ci.org/cloak-php/robo-coveralls-kit.svg?branch=master)](https://travis-ci.org/cloak-php/robo-coveralls-kit)
+[![HHVM Status](http://hhvm.h4cc.de/badge/cloak/robo-coveralls-kit.svg)](http://hhvm.h4cc.de/package/cloak/robo-coveralls-kit)
 [![Coverage Status](https://coveralls.io/repos/cloak-php/robo-coveralls-kit/badge.png)](https://coveralls.io/r/cloak-php/robo-coveralls)
 [![Dependency Status](https://www.versioneye.com/user/projects/54a2bb099742750f3b000002/badge.svg?style=flat)](https://www.versioneye.com/user/projects/54a2bb099742750f3b000002)
 
