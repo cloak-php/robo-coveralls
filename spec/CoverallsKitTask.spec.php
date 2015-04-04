@@ -10,16 +10,17 @@ use coverallskit\ReportBuilder;
 describe('CoverallsKitTask', function() {
     beforeEach(function() {
         $this->configPath = __DIR__ . '/fixtures/coveralls.toml';
-        $this->coverageReportPath = __DIR__ . '/../tmp/build_report.lcov';
-        $this->coverallsReportPath = __DIR__ . '/../tmp/build_coveralls.json';
-        $this->templatePath = __DIR__ . '/fixtures/report.lcov';
 
-        unlink($this->coverageReportPath);
-        unlink($this->coverallsReportPath);
+        $templatePath = __DIR__ . '/fixtures/report.lcov';
+        $template = file_get_contents($templatePath);
 
-        $template = file_get_contents($this->templatePath);
+        $tempDirectory = $this->makeDirectory();
+        $lcovReport = $tempDirectory->createFile('build_report.lcov');
+
         $reportContent = str_replace('{rootDirectory}', realpath(__DIR__ . '/../'), $template);
-        file_put_contents($this->coverageReportPath, $reportContent);
+        file_put_contents($lcovReport->getPath(), $reportContent);
+
+        $this->coverallsReport = $tempDirectory->createFile('build_coveralls.json');
     });
     describe('#run', function() {
         context('when save only', function() {
@@ -30,7 +31,7 @@ describe('CoverallsKitTask', function() {
                     ->run();
             });
             it('save report file', function() {
-                expect(file_exists($this->coverallsReportPath))->toBeTrue();
+                expect(file_exists($this->coverallsReport->getPath()))->toBeTrue();
             });
         });
     });

@@ -13,7 +13,8 @@
         "expect/peridot-expect-plugin": "~2.0",
         "phpspec/prophecy": "~1.4",
         "peridot-php/peridot-dot-reporter": "~1.0",
-        "robo-peridot/robo-peridot": "~1.1"
+        "robo-peridot/robo-peridot": "~1.1",
+        "holyshared/peridot-temporary-plugin": "~0.3"
     },
     "autoload": {
         "psr-4": {
