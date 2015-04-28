@@ -2,8 +2,8 @@
 
 namespace coverallskit\robo;
 
-use coverallskit\Configuration;
-use coverallskit\ReportBuilderInterface;
+use coverallskit\BuilderConfiguration;
+use coverallskit\ReportBuilder;
 use Robo\Common\IO;
 
 
@@ -17,7 +17,7 @@ class ReportAction implements ReportActionInterface
     use IO;
 
     /**
-     * @var ReportBuilderInterface
+     * @var ReportBuilder
      */
     private $builder;
 
@@ -28,9 +28,9 @@ class ReportAction implements ReportActionInterface
 
 
     /**
-     * @param ReportBuilderInterface $builder
+     * @param ReportBuilder $builder
      */
-    public function __construct(ReportBuilderInterface $builder)
+    public function __construct(ReportBuilder $builder)
     {
         $this->builder = $builder;
     }
@@ -40,7 +40,7 @@ class ReportAction implements ReportActionInterface
      */
     public function configure($configPath)
     {
-        $configuration = Configuration::loadFromFile($configPath);
+        $configuration = BuilderConfiguration::loadFromFile($configPath);
         $configuration->applyTo($this->builder);
     }
 

@@ -23,11 +23,11 @@ describe('ReportAction', function() {
 
         $this->prophat = new Prophet();
 
-        $this->builder = $this->prophat->prophesize('coverallskit\ReportBuilderInterface');
+        $this->builder = $this->prophat->prophesize('coverallskit\ReportBuilder');
         $this->action = new ReportAction($this->builder->reveal());
 
-        $this->service = Argument::type('coverallskit\entity\ServiceInterface');
-        $this->repository = Argument::type('coverallskit\entity\RepositoryInterface');
+        $this->service = Argument::type('coverallskit\entity\ServiceEntity');
+        $this->repository = Argument::type('coverallskit\entity\RepositoryEntity');
         $this->sourceFiles = Argument::type('coverallskit\entity\collection\SourceFileCollection');
         $this->reportFilePath = Argument::type('string');
     });
@@ -46,7 +46,7 @@ describe('ReportAction', function() {
     });
     describe('#save', function() {
         beforeEach(function() {
-            $report = $this->prophat->prophesize('coverallskit\entity\ReportInterface');
+            $report = $this->prophat->prophesize('coverallskit\entity\ReportEntity');
             $report->getName()->shouldBeCalled();
             $report->save()->shouldBeCalled();
 
@@ -66,7 +66,7 @@ describe('ReportAction', function() {
     });
     describe('#upload', function() {
         beforeEach(function() {
-            $report = $this->prophat->prophesize('coverallskit\entity\ReportInterface');
+            $report = $this->prophat->prophesize('coverallskit\entity\ReportEntity');
             $report->getName()->shouldBeCalled();
             $report->save()->shouldBeCalled();
             $report->upload()->shouldBeCalled();

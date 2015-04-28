@@ -3,9 +3,9 @@
     "description": "Robo task for coveralls-kit",
     "keywords": ["robo", "task", "coveralls", "coveralls-kit"],
     "require": {
-        "php": ">=5.4.0",
+        "php": ">=5.5.0",
         "codegyre/robo": "~0.5",
-        "cloak/coverallskit": "~1.4"
+        "cloak/coverallskit": "~2.0"
     },
     "require-dev": {
         "peridot-php/peridot": "~1.15",
