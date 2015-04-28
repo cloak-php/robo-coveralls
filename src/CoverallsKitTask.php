@@ -2,7 +2,6 @@
 
 namespace coverallskit\robo;
 
-//use coverallskit\BuildConfiguration;
 use Robo\Contract\TaskInterface;
 use Robo\Task\BaseTask;
 use Robo\Result;

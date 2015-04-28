@@ -22,7 +22,7 @@ class ReportAction implements ReportActionInterface
     private $builder;
 
     /**
-     * @var \coverallskit\entity\ReportInterface
+     * @var \coverallskit\entity\ReportEntity
      */
     private $report;
 
