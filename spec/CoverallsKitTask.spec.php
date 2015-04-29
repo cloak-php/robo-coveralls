@@ -10,17 +10,19 @@ describe(CoverallsKitTask::class, function() {
     describe('#run', function() {
         context('when save only', function() {
             beforeEach(function() {
-                $tempDirectory = $this->makeDirectory();
+                $this->tempDirectory = $this->makeDirectory();
 
                 //Create a lcov report from template
                 $reportContent = $this->loadFixture('mustache:lcovReport', [
                     'rootDirectory' => realpath(__DIR__ . '/../')
                 ]);
 
-                $tempLcovReport = $tempDirectory->createNewFile('build_report.lcov');
+                $tempLcovReport = $this->tempDirectory->createNewFile('build_report.lcov');
                 $tempLcovReport->write($reportContent);
 
-                $this->coverallsReportPath = $tempDirectory->resolvePath('build_coveralls.json');
+                $this->tempLcovReport = $tempLcovReport;
+
+                $this->coverallsReportPath = $this->tempDirectory->resolvePath('build_coveralls.json');
 
                 //Create a coveralls config file from template
                 $coverallsConfig = $this->loadFixture('mustache:coverallsConfig', [
@@ -29,17 +31,17 @@ describe(CoverallsKitTask::class, function() {
                     'lcovReportPath' => $tempLcovReport->getPath()
                 ]);
 
-                $tempCoverallsConfig = $tempDirectory->createNewFile('coveralls.toml');
+                $tempCoverallsConfig = $this->tempDirectory->createNewFile('coveralls.toml');
                 $tempCoverallsConfig->write($coverallsConfig);
 
-                $this->configPath = $tempCoverallsConfig->getPath();
-
-                $this->task = new CoverallsKitTask(new CoverallsReportAction(new CoverallsReportBuilder()));
-                $this->task->configureBy($this->configPath)
-                    ->saveOnly()
-                    ->run();
+                $this->tempCoverallsConfig = $tempCoverallsConfig;
             });
             it('save report file', function() {
+                $this->task = new CoverallsKitTask(new CoverallsReportAction(new CoverallsReportBuilder()));
+                $this->task->configureBy($this->tempCoverallsConfig->getPath())
+                    ->saveOnly()
+                    ->run();
+
                 expect(file_exists($this->coverallsReportPath))->toBeTrue();
             });
         });
