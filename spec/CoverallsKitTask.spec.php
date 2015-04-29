@@ -9,16 +9,17 @@ use coverallskit\CoverallsReportBuilder;
 
 describe(CoverallsKitTask::class, function() {
     beforeEach(function() {
-        $this->configPath = __DIR__ . '/fixtures/coveralls.toml';
-        $this->coverageReportPath = __DIR__ . '/../tmp/build_report.lcov';
-        $this->coverallsReportPath = __DIR__ . '/../tmp/build_coveralls.json';
-        $this->templatePath = __DIR__ . '/fixtures/report.lcov';
+        $this->configPath = $this->fixturePath('static:coverallsConfig');
+        $this->coverageReportPath = __DIR__ . '/../tmp/build_report.lcov'; //temp
+        $this->coverallsReportPath = __DIR__ . '/../tmp/build_coveralls.json'; //output tmp
+
+        $reportContent = $this->loadFixture('mustache:lcovReport', [
+            'rootDirectory' => realpath(__DIR__ . '/../')
+        ]);
 
         unlink($this->coverageReportPath);
         unlink($this->coverallsReportPath);
 
-        $template = file_get_contents($this->templatePath);
-        $reportContent = str_replace('{rootDirectory}', realpath(__DIR__ . '/../'), $template);
         file_put_contents($this->coverageReportPath, $reportContent);
     });
     describe('#run', function() {
