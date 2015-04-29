@@ -14,7 +14,8 @@
         "phpspec/prophecy": "~1.4",
         "peridot-php/peridot-dot-reporter": "~1.0",
         "robo-peridot/robo-peridot": "~1.1",
-        "holyshared/peridot-file-fixture-plugin": "~0.3"
+        "holyshared/peridot-file-fixture-plugin": "~0.3",
+        "holyshared/peridot-temporary-plugin": "~0.4"
     },
     "autoload": {
         "psr-4": {
