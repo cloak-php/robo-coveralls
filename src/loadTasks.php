@@ -15,7 +15,7 @@ trait loadTasks
     protected function taskCoverallsKit()
     {
         $builder = new CoverallsReportBuilder();
-        $action = new ReportAction($builder);
+        $action = new CoverallsReportAction($builder);
 
         return new CoverallsKitTask($action);
     }
