@@ -7,7 +7,7 @@ use coverallskit\robo\ReportAction;
 use coverallskit\CoverallsReportBuilder;
 
 
-describe('CoverallsKitTask', function() {
+describe(CoverallsKitTask::class, function() {
     beforeEach(function() {
         $this->configPath = __DIR__ . '/fixtures/coveralls.toml';
         $this->coverageReportPath = __DIR__ . '/../tmp/build_report.lcov';

@@ -3,6 +3,11 @@
 namespace coverallskit\robo\spec;
 
 use coverallskit\robo\ReportAction;
+use coverallskit\ReportBuilder;
+use coverallskit\entity\ReportEntity;
+use coverallskit\entity\ServiceEntity;
+use coverallskit\entity\RepositoryEntity;
+use coverallskit\entity\collection\SourceFileCollection;
 use Prophecy\Prophet;
 use Prophecy\Argument;
 
@@ -23,12 +28,12 @@ describe('ReportAction', function() {
 
         $this->prophat = new Prophet();
 
-        $this->builder = $this->prophat->prophesize('coverallskit\ReportBuilder');
+        $this->builder = $this->prophat->prophesize(ReportBuilder::class);
         $this->action = new ReportAction($this->builder->reveal());
 
-        $this->service = Argument::type('coverallskit\entity\ServiceEntity');
-        $this->repository = Argument::type('coverallskit\entity\RepositoryEntity');
-        $this->sourceFiles = Argument::type('coverallskit\entity\collection\SourceFileCollection');
+        $this->service = Argument::type(ServiceEntity::class);
+        $this->repository = Argument::type(RepositoryEntity::class);
+        $this->sourceFiles = Argument::type(SourceFileCollection::class);
         $this->reportFilePath = Argument::type('string');
     });
     describe('#configure', function() {
@@ -46,7 +51,7 @@ describe('ReportAction', function() {
     });
     describe('#save', function() {
         beforeEach(function() {
-            $report = $this->prophat->prophesize('coverallskit\entity\ReportEntity');
+            $report = $this->prophat->prophesize(ReportEntity::class);
             $report->getName()->shouldBeCalled();
             $report->save()->shouldBeCalled();
 
@@ -66,7 +71,7 @@ describe('ReportAction', function() {
     });
     describe('#upload', function() {
         beforeEach(function() {
-            $report = $this->prophat->prophesize('coverallskit\entity\ReportEntity');
+            $report = $this->prophat->prophesize(ReportEntity::class);
             $report->getName()->shouldBeCalled();
             $report->save()->shouldBeCalled();
             $report->upload()->shouldBeCalled();
