@@ -2,8 +2,6 @@
 
 namespace coverallskit\robo;
 
-use coverallskit\Configuration;
-//use coverallskit\robo\ReportActionInterface;
 use Robo\Contract\TaskInterface;
 use Robo\Task\BaseTask;
 use Robo\Result;
@@ -17,7 +15,7 @@ class CoverallsKitTask extends BaseTask implements TaskInterface
 {
 
     /**
-     * @var ReportActionInterface
+     * @var ReportAction
      */
     private $action;
 
@@ -28,9 +26,9 @@ class CoverallsKitTask extends BaseTask implements TaskInterface
 
 
     /**
-     * @param ReportActionInterface $action
+     * @param ReportAction $action
      */
-    public function __construct(ReportActionInterface $action)
+    public function __construct(ReportAction $action)
     {
         $this->action = $action;
         $this->saveOnly = false;

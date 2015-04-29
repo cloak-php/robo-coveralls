@@ -1,0 +1,6 @@
+[static]
+coverallsConfig = "coveralls.toml"
+
+[mustache]
+lcovReport = "report.ms"
+coverallsConfig = "coveralls.ms"

@@ -3,9 +3,9 @@
     "description": "Robo task for coveralls-kit",
     "keywords": ["robo", "task", "coveralls", "coveralls-kit"],
     "require": {
-        "php": ">=5.4.0",
+        "php": ">=5.5.0",
         "codegyre/robo": "~0.5",
-        "cloak/coverallskit": "~1.4"
+        "cloak/coverallskit": "~2.0"
     },
     "require-dev": {
         "peridot-php/peridot": "~1.15",
@@ -13,7 +13,9 @@
         "expect/peridot-expect-plugin": "~2.0",
         "phpspec/prophecy": "~1.4",
         "peridot-php/peridot-dot-reporter": "~1.0",
-        "robo-peridot/robo-peridot": "~1.1"
+        "robo-peridot/robo-peridot": "~1.1",
+        "holyshared/peridot-file-fixture-plugin": "~0.3",
+        "holyshared/peridot-temporary-plugin": "~0.4"
     },
     "autoload": {
         "psr-4": {

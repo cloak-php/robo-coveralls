@@ -2,12 +2,17 @@
 
 namespace coverallskit\robo\spec;
 
-use coverallskit\robo\ReportAction;
+use coverallskit\robo\CoverallsReportAction;
+use coverallskit\ReportBuilder;
+use coverallskit\entity\ReportEntity;
+use coverallskit\entity\ServiceEntity;
+use coverallskit\entity\RepositoryEntity;
+use coverallskit\entity\collection\SourceFileCollection;
 use Prophecy\Prophet;
 use Prophecy\Argument;
 
 
-describe('ReportAction', function() {
+describe(CoverallsReportAction::class, function() {
     beforeEach(function() {
         $this->configPath = __DIR__ . '/fixtures/coveralls.toml';
         $this->coverageReportPath = __DIR__ . '/../tmp/build_report.lcov';
@@ -23,12 +28,12 @@ describe('ReportAction', function() {
 
         $this->prophat = new Prophet();
 
-        $this->builder = $this->prophat->prophesize('coverallskit\ReportBuilderInterface');
-        $this->action = new ReportAction($this->builder->reveal());
+        $this->builder = $this->prophat->prophesize(ReportBuilder::class);
+        $this->action = new CoverallsReportAction($this->builder->reveal());
 
-        $this->service = Argument::type('coverallskit\entity\ServiceInterface');
-        $this->repository = Argument::type('coverallskit\entity\RepositoryInterface');
-        $this->sourceFiles = Argument::type('coverallskit\entity\collection\SourceFileCollection');
+        $this->service = Argument::type(ServiceEntity::class);
+        $this->repository = Argument::type(RepositoryEntity::class);
+        $this->sourceFiles = Argument::type(SourceFileCollection::class);
         $this->reportFilePath = Argument::type('string');
     });
     describe('#configure', function() {
@@ -46,7 +51,7 @@ describe('ReportAction', function() {
     });
     describe('#save', function() {
         beforeEach(function() {
-            $report = $this->prophat->prophesize('coverallskit\entity\ReportInterface');
+            $report = $this->prophat->prophesize(ReportEntity::class);
             $report->getName()->shouldBeCalled();
             $report->save()->shouldBeCalled();
 
@@ -66,7 +71,7 @@ describe('ReportAction', function() {
     });
     describe('#upload', function() {
         beforeEach(function() {
-            $report = $this->prophat->prophesize('coverallskit\entity\ReportInterface');
+            $report = $this->prophat->prophesize(ReportEntity::class);
             $report->getName()->shouldBeCalled();
             $report->save()->shouldBeCalled();
             $report->upload()->shouldBeCalled();
