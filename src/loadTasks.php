@@ -2,7 +2,7 @@
 
 namespace coverallskit\robo;
 
-use coverallskit\ReportBuilder;
+use coverallskit\CoverallsReportBuilder;
 
 
 /**
@@ -14,8 +14,8 @@ trait loadTasks
 
     protected function taskCoverallsKit()
     {
-        $builder = new ReportBuilder();
-        $action = new ReportAction($builder);
+        $builder = new CoverallsReportBuilder();
+        $action = new CoverallsReportAction($builder);
 
         return new CoverallsKitTask($action);
     }
