@@ -5,13 +5,13 @@
     "require": {
         "php": ">=5.5.0",
         "codegyre/robo": "~0.5",
-        "cloak/coverallskit": "~2.1"
+        "cloak/coverallskit": "~2.2"
     },
     "require-dev": {
         "peridot-php/peridot": "~1.15",
         "cloak/peridot-cloak-plugin": "~2.0",
         "expect/peridot-expect-plugin": "~3.0",
-        "phpspec/prophecy": "~1.4",
+        "phpspec/prophecy": "~1.5",
         "peridot-php/peridot-dot-reporter": "~1.0",
         "holyshared/robo-peridot": "~2.0",
         "holyshared/peridot-file-fixture-plugin": "~1.0",
