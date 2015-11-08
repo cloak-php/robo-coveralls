@@ -4,11 +4,11 @@
     "keywords": ["robo", "task", "coveralls", "coveralls-kit"],
     "require": {
         "php": ">=5.5.0",
-        "codegyre/robo": "~0.5",
+        "codegyre/robo": "~0.6",
         "cloak/coverallskit": "~2.2"
     },
     "require-dev": {
-        "peridot-php/peridot": "~1.15",
+        "peridot-php/peridot": "~1.16",
         "cloak/peridot-cloak-plugin": "~2.0",
         "expect/peridot-expect-plugin": "~3.0",
         "phpspec/prophecy": "~1.5",
